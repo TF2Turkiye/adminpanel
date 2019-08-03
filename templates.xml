@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="TF2 Turkiye - 2019" version="1815">
+    <properties>
+        <templateset>
+            <![CDATA[20]]>
+        </templateset>
+    </properties>
+    <templates>
+        <template name="modcp_nav" version="1815">
+            <![CDATA[<div class="col-12 col-md-2 pr-md-0 mb-3">
+	<div class="list-group rounded  shadow-sm">
+		<div class="bg-brown rounded-top p-2 shadow-sm">
+			<div class="bg-saydam text-white p-2 shadow-sm rounded">
+				{$lang->nav}
+			</div>
+		</div>
+		{$yt_nav_row}
+	{$modcp_nav_forums_posts}
+	{$modcp_nav_users}
+	</div>
+</div>]]></template>
+        <template name="modcp_nav_announcements" version="1815">
+            <![CDATA[<a href="yetkili?action=announcements" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-bullhorn mr-2"></i>{$lang->mcp_nav_announcements}</a>]]></template>
+        <template name="modcp_nav_banning" version="1815">
+            <![CDATA[<a href="yetkili?action=banning" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-user-times mr-2"></i>{$lang->mcp_nav_banning}</a>]]></template>
+        <template name="modcp_nav_editprofile" version="1815">
+            <![CDATA[<a href="yetkili?action=finduser" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-user-edit mr-2"></i>{$lang->mcp_nav_editprofile}</a>]]></template>
+        <template name="modcp_nav_forums_posts" version="1815">
+            <![CDATA[<a class="list-group-item list-group-item-action disabled py-2 px-3 text-muted fz-11">{$lang->mcp_nav_forums}</a>
+
+		{$nav_announcements}
+		{$nav_modqueue}
+		{$nav_reportcenter}
+		{$nav_modlogs}]]></template>
+        <template name="modcp_nav_ipsearch" version="1815">
+            <![CDATA[<a href="yetkili?action=ipsearch" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-address-card mr-2"></i>{$lang->mcp_nav_ipsearch}</a>]]></template>
+        <template name="modcp_nav_modlogs" version="1815">
+            <![CDATA[<a href="yetkili?action=modlogs" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-flag mr-2"></i>{$lang->mcp_nav_modlogs}</a>]]></template>
+        <template name="modcp_nav_modqueue" version="1815">
+            <![CDATA[<a href="yetkili?action=modqueue" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fab fa-affiliatetheme mr-2"></i>{$lang->mcp_nav_modqueue}</a>]]></template>
+        <template name="modcp_nav_reportcenter" version="1815">
+            <![CDATA[<a href="yetkili?action=reports" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-flag-checkered mr-2"></i>{$lang->mcp_nav_report_center}</a>]]></template>
+        <template name="modcp_nav_users" version="1815">
+            <![CDATA[<a class="list-group-item list-group-item-action disabled py-2 px-3 text-muted fz-11">{$lang->mcp_nav_users}</a>
+
+		{$nav_editprofile}
+		{$nav_banning}
+		{$nav_warninglogs}
+		{$nav_ipsearch}<!--OUGC_AWARDS-->]]></template>
+        <template name="modcp_nav_warninglogs" version="1815">
+            <![CDATA[<a href="yetkili?action=warninglogs" class="list-group-item list-group-item-action py-2 px-3 fz-11"><i class="fas fa-exclamation-triangle mr-2"></i>{$lang->mcp_nav_warninglogs}</a>]]></template>
+        <template name="modcp_nobanned" version="1613">
+            <![CDATA[<tr>
+		<td class="trow1" align="center" colspan="4">{$lang->no_bans_ending}</td>
+</tr>]]></template>
+        <template name="modcp_no_announcements_forum" version="1400">
+            <![CDATA[					<tr>
+						<td class="trow1" colspan="3">{$lang->no_forum_announcements}</td>
+					</tr>]]></template>
+        <template name="modcp_no_announcements_global" version="1400">
+            <![CDATA[					<tr>
+						<td class="trow1" colspan="3">{$lang->no_global_announcements}</td>
+					</tr>]]></template>
+        <template name="modcp_reports" version="1815">
+            <![CDATA[<html>
+	<head>
+		<title>{$lang->bildirim}{$mybb->settings['bbname']} :: {$lang->report_center}</title>
+		{$headerinclude}
+		<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_reports.js?ver=1813"></script>
+	</head>
+	<body<?php echo dark($mybb->user['darkmod']); ?>>
+	{$header}
+	<form action="modcp.php" method="post">
+		<input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
+		<input type="hidden" name="page" value="{$page}" />
+		<div class="row">
+			{$modcp_nav}
+			<div class="col-12 col-md-10">
+
+				<div class="row vertical-align bg-acikturuncu rounded-top p-2 mx-0 shadow-sm">
+					<div class="container bg-saydam rounded p-2 shadow-sm">
+						<div class="col-12 text-left text-white px-0">
+							{$lang->report_center}
+						</div>
+					</div>
+				</div>
+				<div class="row mx-0 mb-3 p-2 bg-light shadow-sm rounded">
+					<div class="col-12 px-0 mb-2 mb-sm-0">
+						<div class="bg-white p-2 shadow-sm rounded text-muted overflow-hidden">
+							<table class="table">
+								<tr>
+									<td class="tcat" width="35%"><span class="smalltext"><strong>{$lang->report_info}</strong></span></td>
+									<td class="tcat" align="left" width="25%"><span class="smalltext"><strong>{$lang->report_type}</strong></span></td>
+									<td class="tcat" align="center" width="15%"><span class="smalltext"><strong>{$lang->report_count}</strong></span></td>
+									<td class="tcat" align="right" width="20%"><span class="smalltext"><strong>{$lang->report_lastpost}</strong></span></td>
+									<td class="tcat" align="center" width="5%"><input type="checkbox" name="allbox" onclick="inlineReports.checkAll(this);" /></td>
+								</tr>
+								{$reports}
+							</table>		
+								<a href="modcp.php?action=allreports">{$lang->view_all_reports}</a>
+						</div>
+
+						<hr>
+						<div class="row">
+							<div class="col-12 mx-auto text-center">
+								<input type="hidden" name="action" value="do_reports" /><input type="submit" id="inline_read" class="btn btn-primary" name="reportsubmit" value="{$lang->mark_read} ({$inlinecount})" />
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>		
+				{$reportspages}
+			</div>
+
+		</div>
+	</form>
+	{$footer}
+	<script type="text/javascript">
+		<!--
+			var mark_read_text = "{$lang->mark_read}";
+		var all_text = "{$report_count}";
+		// -->
+	</script>
+	</body>
+</html>]]></template>
+        <template name="modcp_reports_allnoreports" version="120">
+            <![CDATA[<tr>
+<td class="trow1" align="center" colspan="6">{$lang->no_reports}</td>
+</tr>]]></template>
+        <template name="modcp_reports_allreport" version="1800">
+            <![CDATA[				<tr>
+					<td class="{$trow}">{$report_data['content']}</td>
+					<td class="{$trow}">{$report_data['comment']}</td>
+					<td class="{$trow}" align="center"><a href="{$report['reporterlink']}" target="_blank">{$report['username']}</a></td>
+					<td class="{$trow}" align="center">{$report_data['reports']}</td>
+					<td class="{$trow}" align="center" style="white-space: nowrap"><span class="smalltext">{$report_data['time']}</span></td>
+				</tr>]]></template>
+        <template name="modcp_reports_allreports" version="1800">
+            <![CDATA[<html>
+<head>
+<title>{$lang->bildirim}{$mybb->settings['bbname']} :: {$lang->all_reports}</title>
+{$headerinclude}
+</head>
+<body<?php echo dark($mybb->user['darkmod']); ?>>
+{$header}
+<table width="100%" border="0" align="center">
+	<tr>
+		{$modcp_nav}
+		<td valign="top">
+			<table border="0" cellspacing="{$theme['borderwidth']}" cellpadding="{$theme['tablespace']}" class="tborder">
+				<tr>
+					<td class="thead" align="center" colspan="6"><strong>{$lang->all_reports}</strong></td>
+				</tr>
+				<tr>
+					<td class="tcat" width="30%"><span class="smalltext"><strong>{$lang->report_info}</strong></span></td>
+					<td class="tcat" width="20%"><span class="smalltext"><strong>{$lang->report_type}</strong></span></td>
+					<td class="tcat" align="center" width="15%"><span class="smalltext"><strong>{$lang->reporter}</strong></span></td>
+					<td class="tcat" align="center" width="10%"><span class="smalltext"><strong>{$lang->report_count}</strong></span></td>
+					<td class="tcat" align="center" width="15%"><span class="smalltext"><strong>{$lang->report_time}</strong></span></td>
+				</tr>
+				{$allreports}
+			</table>
+			{$allreportspages}
+		</td>
+	</tr>
+</table>
+{$footer}
+</body>
+</html>]]></template>
+        <template name="modcp_reports_multipage" version="1800">
+            <![CDATA[{$multipage}]]></template>
+        <template name="modcp_reports_noreports" version="1607">
+            <![CDATA[<tr>
+<td class="trow1" align="center" colspan="7">{$lang->no_reports}</td>
+</tr>]]></template>
+        <template name="modcp_reports_report" version="1813">
+            <![CDATA[<tr class="inline_row">
+	<td class="{$trow}">{$report_data['content']}</td>
+	<td class="{$trow}" align="left">{$report_data['comment']}</td>
+	<td class="{$trow}" align="center">{$report_data['reports']}</td>
+	<td class="{$trow} smalltext" align="right">{$report_data['lastreporter']}</td>
+	<td class="{$trow}" align="center"><input type="checkbox" class="checkbox" name="reports[]" id="reports_{$report['rid']}" value="{$report['rid']}"{$inlinecheck} /></td>
+</tr>]]></template>
+        <template name="modcp_reports_report_comment" version="1808">
+            <![CDATA[{$reason}]]></template>
+        <template name="modcp_reports_report_comment_extra" version="1808">
+            <![CDATA[{$reason}: {$comment}]]></template>
+        <template name="modcp_reports_selectall" version="1813">
+            <![CDATA[<tr id="selectAllrow" class="hiddenrow">
+	<td colspan="8" class="selectall">{$lang->page_selected} <a href="javascript:void(0)" onclick='inlineReports.selectAll(); return false;'>{$lang->select_all}</a></td>
+</tr>
+<tr id="allSelectedrow" class="hiddenrow">
+	<td colspan="8" class="selectall">{$lang->all_selected} <a href="javascript:void(0)" onclick='inlineReports.clearChecked(); return false;'>{$lang->clear_selection}</a></td>
+</tr>]]></template>
+        <template name="modcp_warninglogs" version="1815">
+            <![CDATA[<html>
+	<head>
+		<title>{$lang->bildirim}{$mybb->settings['bbname']} :: {$lang->warning_logs}</title>
+		{$headerinclude}
+	</head>
+	<body<?php echo dark($mybb->user['darkmod']); ?>>
+	{$header}
+	<div class="row">
+		{$modcp_nav}
+		<div class="col-12 col-md-10">
+			<div class="row vertical-align bg-acikturuncu rounded-top p-2 mx-0 shadow-sm">
+				<div class="container bg-saydam rounded p-2 shadow-sm">
+					<div class="col-12 text-left text-white px-0">
+						{$lang->warning_logs}
+					</div>
+				</div>
+			</div>
+			<div class="row mx-0 mb-3 p-2 bg-light shadow-sm rounded">
+				<div class="col-12 px-0 mb-2 mb-sm-0">
+					<div class="bg-white p-2 shadow-sm rounded text-muted overflow-hidden">
+						<table class="table">
+							<tr>
+								<td class="tcat" width="15%"><span class="smalltext"><strong>{$lang->warned_user}</strong></span></td>
+								<td class="tcat" width="25%"><span class="smalltext"><strong>{$lang->warning}</strong></span></td>
+								<td class="tcat" width="20%" align="center"><span class="smalltext"><strong>{$lang->date_issued}</strong></span></td>
+								<td class="tcat" width="20%" align="center"><span class="smalltext"><strong>{$lang->expires}</strong></span></td>
+								<td class="tcat" width="15%"><span class="smalltext"><strong>{$lang->issued_by}</strong></span></td>
+								<td class="tcat" width="1%" align="center"><span class="smalltext"><strong>{$lang->details}</strong></span></td>
+							</tr>
+							{$warning_list}
+						</table>
+						{$multipage}
+						<br />
+						<form action="modcp.php" method="get">
+							<input type="hidden" name="action" value="warninglogs" />
+							<table border="0" cellspacing="{$theme['borderwidth']}" cellpadding="{$theme['tablespace']}" class="tborder">
+								<tr>
+									<td class="thead" colspan="2"><strong>{$lang->filter_warning_logs}</strong></td>
+								</tr>
+								<tr>
+									<td class="trow1" width="25%"><strong>{$lang->filter_warned_user}</strong></td>
+									<td class="trow1" width="75%"><input type="text" name="filter[username]" id="username" value="{$filter_username}" class="textbox" /></td>
+								</tr>
+								<tr>
+									<td class="trow2" width="25%"><strong>{$lang->filter_issued_by}</strong></td>
+									<td class="trow2" width="75%"><input type="text" name="filter[mod_username]" value="{$filter_modusername}" class="textbox" /></td>
+								</tr>
+								<tr>
+									<td class="trow1" width="25%"><strong>{$lang->filter_reason}</strong></td>
+									<td class="trow1" width="75%"><input type="text" name="filter[reason]" value="{$filter_reason}" class="textbox" /></td>
+								</tr>
+								<tr>
+									<td class="trow2" width="25%"><strong>{$lang->sort_by}</strong></td>
+									<td class="trow2" width="75%">
+										<select name="filter[sortby]">
+											<option value="username"{$sortbysel['username']}>{$lang->username}</option>
+											<option value="issuedby"{$sortbysel['issuedby']}>{$lang->issued_by}</option>
+											<option value="dateline"{$sortbysel['dateline']}>{$lang->issued_date}</option>
+											<option value="expires"{$sortbysel['expires']}>{$lang->expiry_date}</option>
+										</select>
+										{$lang->in}
+										<select name="filter[order]">
+											<option value="asc"{$ordersel['asc']}>{$lang->asc}</option>
+											<option value="desc"{$ordersel['desc']}>{$lang->desc}</option>
+										</select>
+										{$lang->order}
+									</td>
+								</tr>
+								<tr>
+									<td class="trow1" width="25%"><strong>{$lang->per_page}</strong></td>
+									<td class="trow1" width="75%"><input type="text" name="filter[per_page]" value="{$per_page}" class="textbox" /></td>
+								</tr>
+							</table>
+							<br />
+							<div align="center">
+								<input type="submit" class="button" value="{$lang->filter_warning_logs}" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{$footer}
+	<link rel="stylesheet" href="{$mybb->asset_url}/jscripts/select2/select2.css?ver=1807">
+	<script type="text/javascript" src="{$mybb->asset_url}/jscripts/select2/select2.min.js?ver=1806"></script>
+	<script type="text/javascript">
+		<!--
+			if(use_xmlhttprequest == "1")
+			{
+				MyBB.select2();
+				$("#username").select2({
+					placeholder: "{$lang->search_user}",
+					minimumInputLength: 2,
+					multiple: false,
+					ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+						url: "xmlhttp.php?action=get_users",
+						dataType: 'json',
+						data: function (term, page) {
+							return {
+								query: term, // search term
+							};
+						},
+						results: function (data, page) { // parse the results into the format expected by Select2.
+							// since we are using custom formatting functions we do not need to alter remote JSON data
+							return {results: data};
+						}
+					},
+					initSelection: function(element, callback) {
+						var value = $(element).val();
+						if (value !== "") {
+							callback({
+								id: value,
+								text: value
+							});
+						}
+					},
+				});
+			}
+		// -->
+	</script>
+	</body>
+</html>]]></template>
+        <template name="modcp_warninglogs_nologs" version="1400">
+            <![CDATA[					<tr>
+						<td class="trow1" colspan="6">{$lang->no_warning_logs}</td>
+					</tr>]]></template>
+        <template name="modcp_warninglogs_warning" version="1400">
+            <![CDATA[					<tr>
+						<td class="{$trow}">{$username_link}</td>
+						<td class="{$trow}">{$title} ({$points})</td>
+						<td class="{$trow}" align="center">{$issued_date}</td>
+						<td class="{$trow}" align="center">{$expire_date}{$revoked_text}</td>
+						<td class="{$trow}">{$mod_username_link}</td>
+						<td class="{$trow}" align="center"><a href="warnings.php?action=view&amp;wid={$row['wid']}">{$lang->view}</a></td>
+					</tr>]]></template>
+        <template name="modcp_warninglogs_warning_revoked" version="1400">
+            <![CDATA[<br /><span class="smalltext"><strong>{$lang->revoked}</strong> {$revoked_date}</span>]]></template>
+    </templates>
+</theme>
